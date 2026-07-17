@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (too large for git)
+data/
+*.json
+*.csv
+*.h5
+*.hdf5
+
+# Outputs
+outputs/
+*.pth
+*.pt
+checkpoints/
+
+# Logs
+*.log
+wandb/
+runs/

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Neural Operators for Cross-Modal Graph Alignment"
+authors:
+  - family-names: Zhang
+    given-names: Bailing
+    orcid: "https://orcid.org/0000-0001-5602-1765"
+    affiliation: "NingboTech University"
+type: software
+license: MIT
+repository-code: "https://github.com/aussie-bzhang/neural-graph-operator"
+preferred-citation:
+  type: article
+  title: "Neural Operators for Cross-Modal Graph Alignment"
+  authors:
+    - family-names: Zhang
+      given-names: Bailing
+  journal: "Pattern Recognition"
+  year: 2025

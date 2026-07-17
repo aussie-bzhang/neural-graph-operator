@@ -1,0 +1,48 @@
+# ============================================================
+#  GNO Configuration — Visual Genome
+# ============================================================
+
+data:
+  flickr30k_root: "./data/flickr30k"
+  vg_root: "./data/visual_genome"
+
+split:
+  train_samples: 5000
+  val_samples: 1000
+  test_samples: 1000
+  seed: 42
+
+model:
+  encoder_type: "gcn"
+  num_encoder_layers: 2
+  hidden_dim: 128
+  input_dim: 256
+  dropout: 0.2
+  kernel_type: "bilinear"
+  num_heads: 4
+
+train:
+  epochs: 50
+  batch_size: 16
+  lr: 0.001
+  weight_decay: 0.01
+  optimizer: "adam"
+  scheduler: "cosine"
+  grad_clip: 1.0
+  early_stopping_patience: 10
+  pos_weight: 8.0
+  exact_match_weight: 1.0
+  synonym_match_weight: 0.7
+  category_match_weight: 0.5
+  lambda_recon: 0.1
+  alpha_reg: 0.001
+  beta_entropy: 0.001
+
+eval:
+  threshold: 0.5
+  metrics: ["precision", "recall", "f1", "auc", "exact_match_acc"]
+
+logging:
+  save_dir: "outputs/visual_genome"
+  save_every: 10
+  log_every: 1

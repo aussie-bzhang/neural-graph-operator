@@ -1,0 +1,62 @@
+# ============================================================
+#  GNO Configuration — Flickr30K
+# ============================================================
+
+# --- Paths (adjust to your machine) ---
+data:
+  flickr30k_root: "./data/flickr30k"
+  # expects: flickr30k_images/ subdir with .jpg files
+  #          results.csv  (image|caption pairs)
+  vg_root: "./data/visual_genome"
+  # expects: objects_v1_2.json, image_data.json, etc.
+
+# --- Data splits ---
+split:
+  train_samples: 500        # paper: 500 for Flickr30K
+  val_samples: 100
+  test_samples: 200
+  seed: 42
+
+# --- Model ---
+model:
+  encoder_type: "gcn"       # gcn | gat
+  num_encoder_layers: 2
+  hidden_dim: 128
+  input_dim: 256            # initial entity feature dim
+  dropout: 0.2
+  # Kernel type: "bilinear" | "mlp" | "attention"
+  kernel_type: "bilinear"
+  # For attention kernel
+  num_heads: 4
+
+# --- Training ---
+train:
+  epochs: 50
+  batch_size: 16
+  lr: 0.001
+  weight_decay: 0.01
+  optimizer: "adam"         # adam | adamw
+  scheduler: "cosine"       # cosine | step | none
+  grad_clip: 1.0
+  early_stopping_patience: 10
+  # Weighted loss for sparse alignment
+  pos_weight: 5.0
+  # Multi-level matching weights
+  exact_match_weight: 1.0
+  synonym_match_weight: 0.7
+  category_match_weight: 0.5
+  # Loss components
+  lambda_recon: 0.1
+  alpha_reg: 0.001
+  beta_entropy: 0.001
+
+# --- Evaluation ---
+eval:
+  threshold: 0.5
+  metrics: ["precision", "recall", "f1", "auc", "exact_match_acc"]
+
+# --- Logging ---
+logging:
+  save_dir: "outputs/flickr30k"
+  save_every: 10            # save checkpoint every N epochs
+  log_every: 1

@@ -11,9 +11,14 @@ license: MIT
 repository-code: "https://github.com/aussie-bzhang/neural-graph-operator"
 preferred-citation:
   type: article
-  title: "Neural Operators for Cross-Modal Graph Alignment"
+  title: "Neural operators for cross-modal graph alignment"
   authors:
     - family-names: Zhang
       given-names: Bailing
   journal: "Pattern Recognition"
-  year: 2025
+  volume: 180
+  start: 114456
+  year: 2026
+  issn: "0031-3203"
+  doi: "10.1016/j.patcog.2026.114456"
+  url: "https://www.sciencedirect.com/science/article/pii/S0031320326014202"

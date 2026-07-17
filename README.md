@@ -8,7 +8,8 @@ Official code for the paper:
 
 > **Neural Operators for Cross-Modal Graph Alignment**  
 > Bailing Zhang  
-> *Pattern Recognition*, 2025  
+> *Pattern Recognition*, Volume 180, 2026, 114456  
+> DOI: [10.1016/j.patcog.2026.114456](https://doi.org/10.1016/j.patcog.2026.114456)
 
 ## Overview
 
@@ -152,11 +153,15 @@ Key hyperparameters in `configs/flickr30k.yaml`:
 If you find this work useful, please cite:
 
 ```bibtex
-@article{zhang2025gno,
-  title={Neural Operators for Cross-Modal Graph Alignment},
+@article{ZHANG2026114456,
+  title={Neural operators for cross-modal graph alignment},
   author={Zhang, Bailing},
   journal={Pattern Recognition},
-  year={2025}
+  volume={180},
+  pages={114456},
+  year={2026},
+  issn={0031-3203},
+  doi={https://doi.org/10.1016/j.patcog.2026.114456}
 }
 ```
 
